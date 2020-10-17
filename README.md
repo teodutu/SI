@@ -2,8 +2,7 @@
 Sisteme Incorporate - UPB 2020-2021
 
 ## Laboratoare
-### Laborator 1
-Setup QEMU
+### Laborator 1 - Setup QEMU
 
 In fisierul `Laboratoare/Laborator1/run_pi_qemu/Makefile` se gaseste regula
 `run` care lanseaza `qemu` pentru a emula RaspberryPi-ul folosit la laborator.
@@ -12,3 +11,8 @@ E nevoie ca in directorul de mai sus sa se gaseasca
 si
 [sistemul de fisiere](https://drive.google.com/open?id=0B0lgiPZNMMyvOTFMakFuY1N2Q1E)
 dezarhivat.
+
+### Laborator 2 - Cross-compilare
+Acelasi lucru ca in labul trecut, dar se foloseste variabila de mediu
+`CROSS_COMPILE=arm-linux-gnueabihf-` pentru a compila programul `hello_world.c`
+pentru arhitectura _ARM_.
