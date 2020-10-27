@@ -16,3 +16,16 @@ dezarhivat.
 Acelasi lucru ca in labul trecut, dar se foloseste variabila de mediu
 `CROSS_COMPILE=arm-linux-gnueabihf-` pentru a compila programul `hello_world.c`
 pentru arhitectura _ARM_.
+
+#### Laborator 3 - Compilare Kernel
+Se compileaza si se ruleaza kernelul
+[Raspbian Wheezy 3.18](https://github.com/raspberrypi/linux/tree/rpi-3.18.y)
+dupa ce i se aplica aceste 2 patch-uri:
+- pentru a rula compila `ARMv6` pe platforma *Versatile PB*:
+https://ocw.cs.pub.ro/courses/_media/si/laboratoare/linux-rpi-3.18.y-armv6.txt
+- pentru modificarea configuratiei pentru platforma de mai sus:
+https://ocw.cs.pub.ro/courses/_media/si/laboratoare/linux-rpi-3.18.y-qemu.txt
+
+Compilearea genereaza imaginea de kernel `**/linux//arch/arm/boot/zImage`, iar
+rootfs-ul este
+[cel din primul laborator](https://drive.google.com/file/d/0B0lgiPZNMMyvOTFMakFuY1N2Q1E/view).

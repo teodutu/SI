@@ -56,5 +56,6 @@ dkms.conf
 
 # RaspberryPi
 tools/
+linux/
 2015-05-05-raspbian-wheezy-qemu.img
 zImage-qemu
