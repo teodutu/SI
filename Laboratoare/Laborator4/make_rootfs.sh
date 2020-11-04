@@ -15,51 +15,36 @@ if [ ! -d $CUSTOM_ROOTFS_DIR ]; then
 	mkdir $CUSTOM_ROOTFS_DIR
 fi
 
-create_partition() {
-	offset=$(($1 * 512))
-	file=$2
+echo -e "Creating complete rootfs file..."
+dd if=/dev/zero of=$ROOTFS_IMAGE bs=1 count=0 seek=6G
+fdisk $ROOTFS_IMAGE < fdisk_input.txt
 
-	echo -e "\nMounting required partitions..."
-	sudo mount -o offset=$offset $ORIGINAL_IMAGE_PATH $ORIGINAL_SECTION_DIR
-	sudo mount $file $CUSTOM_ROOTFS_DIR
-
-	echo -e "\nCopying files between partitions..."
-	sudo cp -ra $ORIGINAL_SECTION_DIR/* $CUSTOM_ROOTFS_DIR
-
-	echo -e "\nDone. $CUSTOM_ROOTFS_DIR contains:"
-	ls $CUSTOM_ROOTFS_DIR
-
-	echo -e "\nUnmounting directories"
-	sudo umount $ORIGINAL_SECTION_DIR $CUSTOM_ROOTFS_DIR
-}
-
-echo "Creating boot file..."
-dd if=/dev/zero of=$BOOT_TMP bs=1M count=100
+echo -e "\nCreating boot and rootfs temporary files..."
+dd if=/dev/zero of=$BOOT_TMP bs=1 count=0 seek=100M
 mkfs -t vfat $BOOT_TMP
 
-boot_sector_offset=$(file $ORIGINAL_IMAGE_PATH\
-	| cut -d ":" -f3\
-	| cut -d "," -f8\
-	| cut -d " " -f3)
-create_partition $boot_sector_offset $BOOT_TMP
-
-echo -e "Creating rootfs..."
-dd if=/dev/zero of=$ROOTFS_TMP bs=1M count=6K
+dd if=/dev/zero of=$ROOTFS_TMP bs=1 count=0 seek=6G
 mkfs -t ext2 $ROOTFS_TMP
 
-rootfs_sector_offset=$(file $ORIGINAL_IMAGE_PATH\
+dd if=$BOOT_TMP of=$ROOTFS_IMAGE seek=2K
+dd if=$ROOTFS_TMP of=$ROOTFS_IMAGE seek=202K
+
+echo -e "\nMounting required partitions..."
+original_rootfs_offset=$(file $ORIGINAL_IMAGE_PATH\
 	| cut -d ":" -f4\
 	| cut -d "," -f8\
 	| cut -d " " -f3)
-create_partition $rootfs_sector_offset $ROOTFS_TMP
+sudo mount -o offset=$((original_rootfs_offset * 512)) $ORIGINAL_IMAGE_PATH $ORIGINAL_SECTION_DIR
+sudo mount -o offset=$((206848 * 512)) $ROOTFS_IMAGE $CUSTOM_ROOTFS_DIR
 
-echo -e "\nCreating complete rootfs file..."
-dd if=/dev/zero of=$ROOTFS_IMAGE bs=1K count=$((6 * 1024 * 1024 + 100 * 1024 + 1))
-fdisk $ROOTFS_IMAGE < fdisk_input.txt
+echo -e "\nCopying files between partitions..."
+sudo cp -a $ORIGINAL_SECTION_DIR/* $CUSTOM_ROOTFS_DIR
 
-echo -e "\nCopying rootfs contents..."
-dd if=$BOOT_TMP of=$ROOTFS_IMAGE bs=1K count=100K seek=1
-dd if=$ROOTFS_TMP of=$ROOTFS_IMAGE bs=1K count=6M seek=$((101 * 1024))
+echo -e "\nDone. $CUSTOM_ROOTFS_DIR contains:"
+ls $CUSTOM_ROOTFS_DIR
+
+echo -e "\nUnmounting directories"
+sudo umount $ORIGINAL_SECTION_DIR $CUSTOM_ROOTFS_DIR
 
 rmdir $ORIGINAL_SECTION_DIR $CUSTOM_ROOTFS_DIR
 rm -f $BOOT_TMP $ROOTFS_TMP
