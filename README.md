@@ -40,3 +40,9 @@ inca din primul laborator:
 
 `fdisk` se foloseste pentru a crea tabela de partitionare a sistemului de
 fisiere.
+
+### Laborator 5 - Servicii web...
+Niste puscarii in `html` si `php`. Nicio legatura cu nimic. Strict de umplutura.
+Se configureaza in VM-ul ce ruleaza *Raspbian* un server care afisesaza data
+curenta cand se apasa un buton si care afiseaza parametrii primiti de kernel
+cand porneste si date despre dispozitivul unde e montat `/`.
