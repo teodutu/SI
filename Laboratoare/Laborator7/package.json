@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.0"
+  },
+  "fitbit": {
+    "appUUID": "e827618f-283f-4a74-9e17-a0b7c7c15c9d",
+    "appType": "clockface",
+    "appDisplayName": "SI_Lab8",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "SI_Lab8"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

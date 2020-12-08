@@ -2,6 +2,7 @@
 Sisteme Incorporate - UPB 2020-2021
 
 
+
 ## Laboratoare
 ### Laborator 1 - Setup QEMU
 
@@ -66,3 +67,9 @@ contine noul hostname in `poky/meta/recipes-core/base-files`, dupa care se
 adauga calea catre acesta in
 `poky/meta/recipes-core/base-files/base-files_3.0.14.bb`, impreuna cu functia
 `do_install_append()` care sa adauge noul fisier.
+
+
+### Laborator 7 - Fitbit SDK
+Propaganda ieftina. Pana si **AUR** ar fi facut-o mai bine... Se da copy paste
+de pe ocw unor jeguri in *Javascript* ca sa faci un cacat de aplicatie pe un
+simulator de ceasuri de la *Fitbit*. Nimic util. 

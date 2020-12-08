@@ -1,0 +1,27 @@
+<svg class="background">
+  <!-- Displaying clock  -->
+  <text id="clock" />
+
+  <!-- Stat Arcs  -->
+  <arc id="hr" x="10%" y="12%" width="275" height="275" fill="white"
+    arc-width="30" start-angle="20" sweep-angle="50" />
+  <arc id="floors" x="10%" y="12%" width="275" height="275" fill="white"
+    arc-width="30" start-angle="110" sweep-angle="50" />
+  <arc id="battery" x="10%" y="12%" width="275" height="275" fill="white"
+    arc-width="30" start-angle="200" sweep-angle="50" />
+  <arc id="steps" x="10%" y="12%" width="275" height="275" fill="white"
+    arc-width="30" start-angle="290" sweep-angle="50" />
+
+  <!-- Stat Images  -->
+  <image x="74%" y="25%" width="22" height="22" href="hr.png" />
+  <image x="71%" y="75%" width="22" height="22" href="floors.png" />
+  <image x="21%" y="75%" width="22" height="22" href="battery.png" />
+  <image x="21%" y="25%" width="22" height="22" href="steps.png" />
+  
+  <!-- Displaying stat name and its value  -->
+  <text id="stat" />
+  
+  <!-- Big rectangle to add the click/tap event on it,
+       having the size of the screen and being invisible -->
+  <rect id="statbutton" pointer-events="all" />
+</svg>
