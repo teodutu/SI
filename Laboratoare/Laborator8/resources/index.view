@@ -1,0 +1,32 @@
+<svg class="background">
+  <image x="13%" width="75%" height="75%" href="christmas_tree.png" />
+
+<!-- The three buttons at the bottom -->
+  <use id="lights-1" x="0%" y="78%"  width="33%" href="#icon-text-button" class="icon-text-button bottom" />
+  <use id="lights-2" x="34%" y="78%" width="33%" href="#icon-text-button" class="icon-text-button bottom" />
+  <use id="lights-3" x="68%" y="78%" width="33%" href="#icon-text-button" class="icon-text-button bottom" />
+  
+<!-- Bottom globes from left to right -->
+  <circle id="bot1" cx="28%" cy="57%" r="8" fill="red" />
+  <circle id="bot2" cx="38%" cy="55%" r="8" fill="red" />
+  <circle id="bot3" cx="50%" cy="57%" r="8" fill="red" />
+  <circle id="bot4" cx="61%" cy="53%" r="8" fill="red" />
+  <circle id="bot5" cx="70%" cy="57%" r="8" fill="red" />
+
+<!-- Bottom-middle globes from left to right -->
+  <circle id="botmid1" cx="32%" cy="44%" r="8" fill="red" />
+  <circle id="botmid2" cx="42%" cy="46%" r="8" fill="red" />
+  <circle id="botmid3" cx="51%" cy="45%" r="8" fill="red" />
+  <circle id="botmid4" cx="60%" cy="42%" r="8" fill="red" />
+
+<!-- Middle globes from left to right -->
+  <circle id="mid1" cx="28%" cy="30%" r="8" fill="red" />
+  <circle id="mid2" cx="47%" cy="32%" r="8" fill="red" />
+  <circle id="mid3" cx="64%" cy="30%" r="8" fill="red" />
+
+<!-- Top-middle globe -->
+  <circle id="topmid" cx="45%" cy="15%" r="8" fill="red" />
+
+<!-- Top globe -->
+  <circle id="top" cx="48%" cy="5%" r="8" fill="red" />
+</svg>

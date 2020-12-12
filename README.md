@@ -69,7 +69,10 @@ adauga calea catre acesta in
 `do_install_append()` care sa adauge noul fisier.
 
 
-### Laborator 7 - Fitbit SDK
+### Laboratoare 7, 8 - Fitbit SDK
 Propaganda ieftina. Pana si **AUR** ar fi facut-o mai bine... Se da copy paste
 de pe ocw unor jeguri in *Javascript* ca sa faci un cacat de aplicatie pe un
-simulator de ceasuri de la *Fitbit*. Nimic util. 
+simulator de ceasuri de la *Fitbit*. Nimic util.
+
+Macar la labul 8 se ilumineaza un brad. Tot stupid, dar macar are legatura cu
+Craciunul.

@@ -1,0 +1,46 @@
+.background {
+  viewport-fill: lightblue;
+}
+
+.defaultText {
+  font-size: 12;
+  font-family: System-Regular;
+  font-weight: regular;
+  text-length: 32;
+}
+
+#lights-1 {
+  fill: fb-red;
+}
+
+#lights-2 {
+  fill: fb-green;
+}
+
+#lights-3 {
+  fill: fb-blue;
+}
+
+#lights-1 #text {
+  x: 20%;
+  y: 40%;
+  font-size: 18;
+  text-buffer: "Blink";
+  fill: black;
+}
+
+#lights-2 #text {
+  x: 2%;
+  y: 40%;
+  font-size: 18;
+  text-buffer: "Slide";
+  fill: black;
+}
+
+#lights-3 #text {
+  x: -20%;
+  y: 40%;
+  font-size: 18;
+  text-buffer: "Custom";
+  fill: black;
+}
