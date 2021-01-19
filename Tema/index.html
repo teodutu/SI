@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<h1>
+			Merry Christmas!
+		</h1>
+		<p>
+			Upload a file, then press the 'Display Christmas Tree' button.
+		</p>
+		<form method="post" action="/cgi-bin/display_tree.py" enctype="multipart/form-data">
+			<input type="file" name="tree_file.txt" id="file" />
+			<input type="submit" name="tree" value="Display Christmas Tree" />
+		</form>
+	</body>
+</html>
